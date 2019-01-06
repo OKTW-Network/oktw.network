@@ -1,0 +1,10 @@
+.center {
+    align-content: space-between;
+    .all {
+        align-items: center;
+        justify-items: center;
+    }
+    .self {
+        align-self: center;
+    }
+}
