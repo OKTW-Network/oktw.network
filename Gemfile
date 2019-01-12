@@ -7,11 +7,15 @@ end
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
-# Milti Language
-gem 'jekyll-multiple-languages-plugin'
+group :jekyll_plugins do
 
-# SEO
-gem 'jekyll-seo-tag'
+  # Milti Language
+  gem 'jekyll-multiple-languages-plugin'
 
-# SCSS
-gem 'jekyll-sass-converter'
+  # SEO
+  gem 'jekyll-seo-tag'
+
+  # SCSS
+  gem 'jekyll-sass-converter'
+
+end

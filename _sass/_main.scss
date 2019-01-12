@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC');
-
 * {
     font-family: 'Noto Sans TC', sans-serif;
 }
 
-.oktw {
-    .layout {
-        @import "layout/fullPage.scss";
-    }
-    .flex {
-        display: flex;
-        @import "flex/center.scss";
-    }
-}
+// Elements
+@import "elements/_all.scss";
+
+// Layout
+@import "layout/_all.scss";
+
+// Anime
+@import "anime/_all.scss";
+
+// Color
+@import "color.scss";

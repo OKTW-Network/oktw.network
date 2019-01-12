@@ -1,0 +1,28 @@
+---
+layout: pages/home
+---
+
+<img src="assets/favicon/oktw.svg" alt="OKTW Icon" class="oktw icon homepage anime outOfScreen top" id="logo">
+<div class="oktw title fullpage outOfScreen left white" id="title">OKTW Network</div>
+<img class="paroller oktw background page" src="assets/images/home.jpg"></div>
+
+<script>
+    window.onload = () => {
+        anime({
+            targets: '#logo',
+            translateX: 0,
+            translateY: 0,
+            scale: 1,
+            rotate: '2turn'
+        });
+        setTimeout(() => {
+            anime({
+                targets: '#title',
+                translateX: 0,
+                translateY: 0,
+                scale: 1,
+                rotate: '1turn'
+            });
+        }, 1000)
+    }
+</script>
