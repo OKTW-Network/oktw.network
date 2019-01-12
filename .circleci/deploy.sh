@@ -3,17 +3,20 @@ git config user.email "circleci@oktw.network"
 
 mv _site ./../
 mv .git ./../
+mv .circleci ./../
 
 rm -rf ./*
-cp -R ./../.git ./
+mv ./../.git ./
+mv ./../.circleci ./
 
 git checkout gh-pages
 
-find . -maxdepth 1 ! -name '_site' ! -name '.git' ! -name '.gitignore' -exec rm -rf {} \;
+find . -maxdepth 1 ! -name '_site' ! -name '.git' ! -name '.gitignore' ! -name '.circleci' -exec rm -rf {} \;
 
-cp -R ./../_site/* ./
+mv ./../_site/* ./
 
-git add -fA
+git add .
+git add .circleci
 git commit --allow-empty -m "$(git log master -1 --pretty=%B)"
 git push origin gh-pages
 

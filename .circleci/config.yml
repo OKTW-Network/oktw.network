@@ -1,6 +1,7 @@
 version: 2
 jobs:
   build:
+
     docker:
        - image: circleci/ruby:2.6
 
@@ -36,17 +37,19 @@ jobs:
             - ./vendor/bundle
           key: gems-{{ checksum "Gemfile.lock" }}
         
-
       - persist_to_workspace:
           root: ./
           paths:
             - _site
 
   deploy:
+
     docker:
        - image: circleci/ruby:2.6
+
     steps:      
       - checkout
+
       - restore_cache:
           keys:
           - gems-{{ checksum "Gemfile.lock" }}
@@ -80,9 +83,18 @@ jobs:
             if [ $CIRCLE_BRANCH == 'master' ]; then
               bash .circleci/deploy.sh
             fi
+
 workflows:
   version: 2
   build:
     jobs:
-      - build
-      - deploy
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
