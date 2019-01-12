@@ -5,12 +5,21 @@
 
 // Elements
 @import "elements/_all.scss";
-
 // Layout
 @import "layout/_all.scss";
-
 // Anime
 @import "anime/_all.scss";
-
 // Color
 @import "color.scss";
+// No ScrollBar but Scrollable
+::-webkit-scrollbar {
+    display: none;
+}
+
+ ::-webkit-scrollbar-button {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+}

@@ -3,7 +3,7 @@ layout: pages/home
 ---
 
 <img src="assets/favicon/oktw.svg" alt="OKTW Icon" class="oktw icon homepage anime outOfScreen top" id="logo">
-<div class="oktw title fullpage outOfScreen left white" id="title">OKTW Network</div>
+<div class="oktw title fullpage white anime outOfScreen left" id="title">OKTW Network</div>
 <img class="paroller oktw background page" src="assets/images/home.jpg"></div>
 
 <script>
@@ -12,16 +12,14 @@ layout: pages/home
             targets: '#logo',
             translateX: 0,
             translateY: 0,
-            scale: 1,
-            rotate: '2turn'
+            easing: 'easeInOutBack',
         });
         setTimeout(() => {
             anime({
                 targets: '#title',
                 translateX: 0,
                 translateY: 0,
-                scale: 1,
-                rotate: '1turn'
+                easing: 'easeInOutBack',
             });
         }, 1000)
     }
