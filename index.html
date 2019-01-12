@@ -49,15 +49,13 @@
     <div class="oktw layout fullPage flex center all cols">
     <img src="assets/favicon/oktw.svg" alt="OKTW Icon" class="oktw icon homepage anime outOfScreen top" id="logo">
 <div class="oktw layout flex rows anime outOfScreen left" id="title">
-    <div class="oktw title fullpage white anime" id="title_OKTW">OKTW</div>
-    <div class="oktw title fullpage white anime" id="title_Network">Network</div>
+    <div class="oktw title fullpage white anime textEasing one" id="title_OKTW">OKTW</div>
+    <div class="oktw title fullpage white anime textEasing one" id="title_Network">Network</div>
 </div>
 <img class="paroller oktw background page" src="assets/images/home.jpg">
 
 <script>
     window.onload = () => {
-        setFixedSize($("#title_OKTW"));
-        setFixedSize($("#title_Network"));
         anime({
             targets: '#logo',
             translateX: 0,
@@ -72,14 +70,24 @@
                 easing: 'easeInOutBack'
             });
             setTimeout(() => {
-                setWidth($("#title_OKTW"),"0.7em");
-                setWidth($("#title_Network"),"0.7em");
-            },1000)
+                anime({
+                    targets: '#title_OKTW',
+                    width: '3em',
+                    delay: 0,
+                    easing: 'easeInOutSine'
+                });
+                anime({
+                    targets: '#title_Network',
+                    width: '4em',
+                    delay: 0,
+                    easing: 'easeInOutSine'
+                });
+            },200)
         }, 1000)
     }
 </script>
-<div class="ui inverted pointing secondary menu">
-    <a class="active item">
+<div class="ui secondary pointing inverted menu">
+    <a class="active item ">
       Home
     </a>
     <a class="item">
