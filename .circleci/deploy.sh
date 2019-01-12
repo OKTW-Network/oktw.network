@@ -7,13 +7,13 @@ mv .circleci ./../
 
 rm -rf ./*
 mv ./../.git ./
-mv ./../.circleci ./
 
 git checkout gh-pages
 
 find . -maxdepth 1 ! -name '_site' ! -name '.git' ! -name '.gitignore' ! -name '.circleci' -exec rm -rf {} \;
 
 mv ./../_site/* ./
+mv ./../.circleci ./
 
 git add .
 git add .circleci
