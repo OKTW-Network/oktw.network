@@ -1,6 +1,8 @@
 @import "outOfScreen.scss";
 @import "size.scss";
+@import "textEasing.scss";
 
 .oktw.anime{
     transition: 1s;
+    overflow:hidden;
 }

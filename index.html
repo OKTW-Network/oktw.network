@@ -3,7 +3,10 @@ layout: pages/home
 ---
 
 <img src="assets/favicon/oktw.svg" alt="OKTW Icon" class="oktw icon homepage anime outOfScreen top" id="logo">
-<div class="oktw title fullpage white anime outOfScreen left" id="title">OKTW Network</div>
+<div class="oktw layout flex rows anime outOfScreen left" id="title">
+    <div class="oktw title fullpage white anime textEasing one" id="title_OKTW">OKTW</div>
+    <div class="oktw title fullpage white anime textEasing one" id="title_Network">Network</div>
+</div>
 <img class="paroller oktw background page" src="assets/images/home.jpg">
 
 <script>
@@ -19,8 +22,22 @@ layout: pages/home
                 targets: '#title',
                 translateX: 0,
                 translateY: 0,
-                easing: 'easeInOutBack',
+                easing: 'easeInOutBack'
             });
+            setTimeout(() => {
+                anime({
+                    targets: '#title_OKTW',
+                    width: '3em',
+                    delay: 0,
+                    easing: 'easeInOutSine'
+                });
+                anime({
+                    targets: '#title_Network',
+                    width: '4em',
+                    delay: 0,
+                    easing: 'easeInOutSine'
+                });
+            },200)
         }, 1000)
     }
 </script>
