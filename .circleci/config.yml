@@ -31,15 +31,6 @@ jobs:
           name: Build Website
           command: bundle exec jekyll build
 
-      - run:
-          name: Test website (using HTMLProofer)
-          command: |
-            bundle exec htmlproofer ./_site \
-              --allow-hash-href \
-              --check-favicon  \
-              --check-html \
-              --disable-external
-
       - save_cache:
           paths:
             - ./vendor/bundle
