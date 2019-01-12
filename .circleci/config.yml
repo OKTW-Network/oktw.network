@@ -1,0 +1,52 @@
+version: 2
+jobs:
+  build:
+    docker:
+       - image: circleci/ruby:2.6
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - gems-{{ checksum "Gemfile.lock" }}
+          - gems-cache
+
+      - run:
+          name: Install / Update Bundle
+          command: gem install bundler || gem update bundler
+
+      - run:
+          name: Install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+      - run:
+          name: File list
+          command: ls -alh .
+
+      - run:
+          name: Build Website
+          command: bundle exec jekyll build
+
+      - run:
+          name: Test website (using HTMLProofer)
+          command: |
+            bundle exec htmlproofer ./_site \
+              --allow-hash-href \
+              --check-favicon  \
+              --check-html \
+              --disable-external
+
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: gems-{{ checksum "Gemfile.lock" }}
+        
+
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - _site
