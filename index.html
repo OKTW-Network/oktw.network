@@ -7,7 +7,6 @@ layout: pages/home
     <div class="oktw title fullpage white anime textEasing one" id="title_OKTW">OKTW</div>
     <div class="oktw title fullpage white anime textEasing one" id="title_Network">Network</div>
 </div>
-<img class="paroller oktw background page" src="assets/images/home.jpg">
 
 <script>
     window.onload = () => {
@@ -25,18 +24,8 @@ layout: pages/home
                 easing: 'easeInOutBack'
             });
             setTimeout(() => {
-                anime({
-                    targets: '#title_OKTW',
-                    width: '3em',
-                    delay: 0,
-                    easing: 'easeInOutBack'
-                });
-                anime({
-                    targets: '#title_Network',
-                    width: '4em',
-                    delay: 0,
-                    easing: 'easeInOutBack'
-                });
+                document.getElementById("title_OKTW").style.width = "3em";
+                document.getElementById("title_Network").style.width = "3em";
             },500)
         }, 1000)
     }
