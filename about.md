@@ -1,5 +1,5 @@
 ---
 layout: pages/post
 title: 
-permalink: /about/
+permalink: /about
 ---

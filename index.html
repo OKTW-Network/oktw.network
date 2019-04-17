@@ -42,16 +42,16 @@ layout: pages/home
     }
 </script>
 <div class="ui secondary pointing inverted menu">
-    <a class="item ">
+    <a class="item" href="{{ "/home" | relative_url }}">
         {% t menu.home %}
     </a>
-    <a class="item">
+    <a class="item" href="{{ "/blog" | relative_url }}">
         {% t menu.blog %}
     </a>
-    <a class="item">
+    <a class="item" href="{{ "/projects" | relative_url }}">
         {% t menu.projects %}
     </a>
-    <a class="item">
+    <a class="item" href="{{ "/about" | relative_url }}">
         {% t menu.about %}
     </a>
 </div>
