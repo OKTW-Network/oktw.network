@@ -15,6 +15,9 @@
 // Background
 @import "background.scss";
 
+// Overwrite Semantic UI
+@import "ui.scss";
+
 // No ScrollBar but Scrollable
 ::-webkit-scrollbar {
     display: none;

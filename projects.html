@@ -8,20 +8,21 @@ permalink: /projects
     <a class="oktw elements title" href="{{ "/" | relative_url }}"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;{% t menu.projects %}</a>
     
     <div class="projects">
-        {% assign sorted = site.projects | sort: 'order' %}
+        {% assign sorted = site.categories.projects | sort: 'order' %}
         {% for post in sorted %}
-        <article class="post  mt-2 mb-4">
-            <h1>
-                {% if page.linkTo == "" %}
-                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                {% else %}
-                    <a href="{{post.linkTo}}">{{ post.title }}</a>
-                {% endif %}
-            </h1>
-            <div class="entry text-light">
-                {{ post.desciption }}
+        <a class="ui fluid card" href="{% if post.linkTo == null %}{{ post.url | relative_url }}{% else %}{{ post.linkTo }}{% endif %}" >
+            {% if post.image != null %}
+                <div class="image">
+                    <img src="{{ post.image }}">
+                </div>
+            {% endif %}
+            <div class="content">
+                <div class="header">{{ post.title }}</div>
+                <div class="description">
+                    {{ post.desciption }}
+                </div>
             </div>
-        </article>
+        </a>
         {% endfor %}
     </div>
 </div>

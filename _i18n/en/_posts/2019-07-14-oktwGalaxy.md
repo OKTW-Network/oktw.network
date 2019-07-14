@@ -1,6 +1,6 @@
 ---
 title : "這是一個部落格文章的範例"
-subtitle: "範例範例範例範例範例範例"
+description: "範例範例範例範例範例範例"
 image : ""
 layout : blog/post
 categories : blog

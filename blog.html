@@ -5,22 +5,28 @@ permalink: /blog
 ---
 
 <div class="oktw layout container">
-    <a class="oktw elements title" href="{{ "/" | relative_url }}"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;{% t menu.projects %}</a>
+    <a class="oktw elements title" href="{{ "/" | relative_url }}"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;{% t menu.blog %}</a>
     
-    <div class="posts">
+    <div class="ui items">
         {% assign sorted = site.categories.blog | sort: 'date' | reverse %}
         {% for post in sorted %}
-        <article class="post  mt-2 mb-4">
-            <h1>
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            </h1>
-            <div class="entry text-light">
-                {{ post.subtitle }}
+        <a class="item" href="{{ post.url | relative_url }}">
+            {% if post.image != null %}
+            <div class="image">
+                <img src="{{ post.image }}">
             </div>
-            <div class="entry text-light">
-                {{ post.date }}
+            {% endif %}
+            <div class="content">
+                <div class="header"><h1>{{ post.title }}</h1>
             </div>
-        </article>
+            <div class="description">
+                <p>{{ post.description }}</p>
+            </div>
+            <div class="extra">
+                <p>{{ post.date | date: "%Y/%m/%d" }}</p>
+            </div>
+          </div>
+        </a>
         {% endfor %}
     </div>
 </div>

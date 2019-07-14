@@ -1,0 +1,17 @@
+.ui.items>.item {
+    background: white !important;
+    color: black !important;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 4px;
+}
+
+.ui.items>.item>.content h1 {
+    color: black !important;
+}
+
+.ui.items>.item>.content p {
+    color: black !important;
+}
