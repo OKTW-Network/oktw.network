@@ -2,4 +2,10 @@
 layout: html
 ---
 
-{{ content }}
+<div class="oktw layout container">
+    <a class="oktw elements title" href="{{ "/projects" | relative_url }}"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;{{ page.title }}</a>
+    <div class="project">
+        {{ content }}
+    </div>
+</div>
+    

@@ -1,7 +1,13 @@
 @import "variables/_all.scss";
 
 .oktw.title.fullpage{
-    font-size: $font-big;
-    height: $font-big;
-    line-height: $font-big;
+    font-size: $font-huge-title;
+    height: $font-huge-title;
+    line-height: $font-huge-title;
 }   
+
+.oktw.title{
+    font-size: $font-huge;
+    height: $font-huge;
+    line-height: $font-huge;
+}

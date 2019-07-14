@@ -1,0 +1,22 @@
+---
+layout: projects/projects
+title: 
+permalink: /projects
+---
+
+<div class="oktw layout container">
+    <a class="oktw elements title" href="{{ "/" | relative_url }}"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;{% t menu.projects %}</a>
+    
+    <div class="projects">
+            {% for post in site.categories.projects %}
+            <article class="post  mt-2 mb-4">
+    
+                 <h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
+    
+                 <div class="entry text-light">
+                    {{ post.subtitle }}
+                </div>
+            </article>
+            {% endfor %}
+         </div>
+</div>
