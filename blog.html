@@ -1,25 +1,24 @@
 ---
-layout: projects/projects
+layout: blog/blog
 title: 
-permalink: /projects
+permalink: /blog
 ---
 
 <div class="oktw layout container">
     <a class="oktw elements title" href="{{ "/" | relative_url }}"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;{% t menu.projects %}</a>
     
-    <div class="projects">
-        {% assign sorted = site.projects | sort: 'order' %}
+    <div class="posts">
+        {% assign sorted = site.categories.blog | sort: 'date' | reverse %}
         {% for post in sorted %}
         <article class="post  mt-2 mb-4">
             <h1>
-                {% if page.linkTo == "" %}
-                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                {% else %}
-                    <a href="{{post.linkTo}}">{{ post.title }}</a>
-                {% endif %}
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
             </h1>
             <div class="entry text-light">
-                {{ post.desciption }}
+                {{ post.subtitle }}
+            </div>
+            <div class="entry text-light">
+                {{ post.date }}
             </div>
         </article>
         {% endfor %}

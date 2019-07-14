@@ -22,3 +22,8 @@ plugins:
   - jekyll-feed
   - jekyll-multiple-languages-plugin
   - jekyll-sass-converter
+
+collections:
+  projects:
+    permalink: /projects/:name
+    layout : projects/project
