@@ -1,0 +1,21 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "21:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: jekyll
+    versions:
+    - 3.9.0
+  - dependency-name: jekyll-seo-tag
+    versions:
+    - 2.7.1
+  - dependency-name: jekyll-feed
+    versions:
+    - 0.15.1
+  - dependency-name: jekyll-multiple-languages-plugin
+    versions:
+    - 1.7.0
