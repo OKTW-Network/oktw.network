@@ -1,14 +1,14 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.8.5"
+gem "jekyll", "~> 3.8.7"
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.6"
+  gem "jekyll-feed", "~> 0.15", ">= 0.15.1"
 
   # Milti Language
-  gem 'jekyll-multiple-languages-plugin'
+  gem 'jekyll-multiple-languages-plugin', '>= 1.7.0'
 
   # SEO
-  gem 'jekyll-seo-tag'
+  gem 'jekyll-seo-tag', '>= 2.7.1'
 
   # SCSS
   gem 'jekyll-sass-converter'
